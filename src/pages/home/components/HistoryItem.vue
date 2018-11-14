@@ -24,6 +24,8 @@
     export default {
       name: "history-item",
       props: ['history'],
+      //子组件通过props管道接收父组件（HistoryLis）传过来的数据；
+      //接收完的子组件，就可以通过history.xxx的方式进行调用了！
       methods: {
         goToDetail(path) {
           // /detail?code=123

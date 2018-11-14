@@ -7,6 +7,7 @@
       <carousel></carousel>
 
       <!--历史记录-->
+      <!--在父组件里面定义一个data属性并且将historyList传递给子组件-->
       <history-list :data="historyList"></history-list>
 
       <!--底部菜单栏显示-->
@@ -33,14 +34,15 @@
           return {
             title:'博彩首页',
             historyList:[]
+            //这个是我们定义的根组件想要的信息；用一个historyList:[]来进行装载；
           }
         },
         mounted(){
-          //发起请求,当数据请求回来的时候,我要将数据渲染到页面上 axios
           // http://localhost:80/api/index
           // http://localhost:3000/api/index
           axios.get('/api/index').then(resp=>{
             this.historyList = resp.data.data
+            //发起请求,当数据请求回来的时候,我要将数据渲染到页面上
           });
         }
     }
