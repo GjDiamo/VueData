@@ -15,7 +15,7 @@
     <div class="clearfix"></div>
 
     <!--4.中奖号码-->
-    <div class="row text-center" style="margin-top: 10px;" v-if="history.red != null">
+    <div class="row text-center" style="margin-top: 10px;" v-if="history.red!=null">
       <div class="ball-item ball-red" v-for="red in history.red.split(',')">{{red}}</div>
 
       <div class="ball-item ball-blue">{{history.blue}}</div>
@@ -90,6 +90,7 @@
     mounted() {
       //发送请求获取 获取当前期的数据
       axios.get('/api/detail?code=' + this.code).then(resp => {
+        //异步请求的发起会隔一段时间就进行一次
         console.log(resp.data)
         this.history = resp.data.data;
       });

@@ -1,7 +1,7 @@
 <template>
     <div>
         <!--标题-->
-        <title-bar :title="title" :needback="needback" @click.native="goToSelectPage"></title-bar>
+        <title-bar :title="title" :needback="needback"></title-bar>
         <!--轮播图-->
         <carousel></carousel>
         <!--本期的信息-->
@@ -71,9 +71,6 @@
         },
         methods:{
           ...mapActions(['addToCart','clearCarts']),
-          goToSelectPage(){
-            this.$router.go(-1);
-          },
           handleClick(){
             //跳转去前一个页面
             this.$router.go(-1);

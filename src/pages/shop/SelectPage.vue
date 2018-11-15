@@ -2,7 +2,7 @@
     <!--放置这个组件的模版-->
     <div>
       <!--title bar-->
-      <title-bar :title="title" :needback="needback" @click.native="goToFromPage"></title-bar>
+      <title-bar :title="title" :needback="needback" ></title-bar>
       <!--本期的奖池信息-->
       <lottery-info></lottery-info>
 
@@ -104,10 +104,6 @@
             console.log(this.redBalls + ' '+ this.blueBall);
             let item = {redBalls:this.redBalls,blueBall:this.blueBall,count:1};
             this.addToCart(item);
-          },
-          //跳转去前一个页面
-          goToFromPage(){
-            this.$router.go(-1);
           },
           goToCart(){
             this.$router.push('/cart')
