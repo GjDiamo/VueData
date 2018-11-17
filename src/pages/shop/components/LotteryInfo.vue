@@ -18,6 +18,7 @@
       data(){
           return{
             code: this.$route.query.code,
+
             history: {
               //页面初始化想要的数据，即prizegrades数组
               prizegrades:[]

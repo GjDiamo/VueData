@@ -33,7 +33,7 @@
         </div>
 
         <div class="col-xs-offset-7 col-xs-2">
-          <button class="btn btn-default">购买立中大奖</button>
+          <button class="btn btn-default" @click="goTOSelect">购买立中大奖</button>
         </div>
       </div>
 
@@ -109,6 +109,11 @@
             name:this.$store.state.username
           }
         },
+      methods:{
+        goTOSelect(){
+          this.$router.push('select')
+        }
+      },
         computed:{
           ...mapGetters(['user'])
         }
